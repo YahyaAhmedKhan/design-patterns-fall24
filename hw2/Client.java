@@ -4,14 +4,14 @@ import Laptop.Decoraters.*;
 
 public class Client {
     public static void main(String[] args) {
-        Laptop lt = new Inspiron();
+        Laptop laptop = new Inspiron();
 
-        lt = new RamAddOn16(lt);
-        lt = new SSDAddOn512(lt);
-        lt = new OLEDpanelAddOn(lt);
-        lt = new RefreshRateAddOn90(lt);
+        laptop = new RamAddOn16(laptop);
+        laptop = new SSDAddOn512(laptop);
+        laptop = new RefreshRateAddOn90(laptop);
+        laptop = new TouchScreenAddOn(laptop);
 
-        lt.printSpecs();
+        laptop.printSpecs();
 
     }
 

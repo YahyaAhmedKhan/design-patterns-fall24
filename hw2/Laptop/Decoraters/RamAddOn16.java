@@ -20,7 +20,6 @@ public class RamAddOn16 extends DecoratedLaptop {
         } else
             throw new RuntimeException("No more RAM slots available");
 
-        addons = addons.concat("\n+16GB RAM");
     }
 
 }

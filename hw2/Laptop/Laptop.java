@@ -4,7 +4,6 @@ package Laptop;
  * Laptop
  */
 public abstract class Laptop {
-    public float cost;
     public String description;
     public int ramSlots;
     public int occupiedRamSlots;

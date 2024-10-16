@@ -3,9 +3,17 @@ package Laptop;
 public class Latitude extends Laptop {
 
     public Latitude() {
-        cost = 100;
         description = "Dell Latitude";
-        // specs = specs.concat("LED screen \n8GB RAM \n256GB SSD");
+        ramSlots = 4;
+        occupiedRamSlots = 1;
+        totalRam = 8;
+        baseStorage = 256;
+        extraStorageSlots = 1;
+        occupiedExtraStorageSlots = 0;
+        display = "LCD";
+        refreshRate = 120;
+        touchScreen = true;
+        addons = "";
     }
 
 }
