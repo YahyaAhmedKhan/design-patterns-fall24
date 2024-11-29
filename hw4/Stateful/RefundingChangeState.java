@@ -2,47 +2,18 @@ package Stateful;
 
 public class RefundingChangeState implements VendingState {
 
-    @Override
-    public void enterCoin(VendingContext context) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'enterCoin'");
-    }
+    public void doAction(VendingContext context) {
+        if (context.state instanceof DispensingProducState || context.state instanceof WaitSelectionState) {
+            // System.out.println("Refunding change");
+            if (context.state instanceof WaitSelectionState) {
+                System.out.println("Cancelled, refunding change");
+            } else if (context.state instanceof DispensingProducState) {
+                System.out.println("Refunding remaining change");
+            }
+            context.setState(this);
 
-    @Override
-    public void showProducts(VendingContext context) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'showProducts'");
+        } else {
+            throw new UnsupportedOperationException("Invalid state transition");
+        }
     }
-
-    @Override
-    public void selectProduct(VendingContext context) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'selectProduct'");
-    }
-
-    @Override
-    public void confirmSelection(VendingContext context) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'confirmSelection'");
-    }
-
-    @Override
-    public void getChange(VendingContext context) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getChange'");
-    }
-
-    @Override
-    public void resetToIdle(VendingContext context) {
-        // TODO Auto-generated method stub
-        context.setState(new IdleState());
-        System.out.println("Reset to idle");
-    }
-
-    @Override
-    public void cancel(VendingContext context) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cancel'");
-    }
-
 }

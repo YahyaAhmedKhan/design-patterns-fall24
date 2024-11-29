@@ -1,11 +1,11 @@
 package Stateful;
 
-public class DisplayingCoinsState implements VendingState {
+public class ProductSelectedState implements VendingState {
 
     public void doAction(VendingContext context) {
-        if (context.state instanceof IdleState) {
+        if (context.state instanceof WaitSelectionState) {
             context.setState(this);
-            System.out.println("Displaying coins");
+            System.out.println("Product selected");
         } else {
             throw new UnsupportedOperationException("Invalid state transition");
         }

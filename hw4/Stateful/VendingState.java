@@ -2,19 +2,7 @@ package Stateful;
 
 public interface VendingState {
 
-    void enterCoin(VendingContext context);
-
-    void showProducts(VendingContext context);
-
-    void selectProduct(VendingContext context);
-
-    void confirmSelection(VendingContext context);
-
-    void getChange(VendingContext context);
-
-    void resetToIdle(VendingContext context);
-
-    void cancel(VendingContext context);
+    void doAction(VendingContext context);
 
     // IDLE,
     // DISPLAYING_ENTERED_COIN_AMOUNT,
